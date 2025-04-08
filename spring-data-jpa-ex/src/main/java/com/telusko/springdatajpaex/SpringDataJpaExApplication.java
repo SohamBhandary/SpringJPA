@@ -6,6 +6,8 @@ import org.springframework.context.ApplicationContext;
 
 import com.telusko.springdatajpaex.model.Student;
 
+import java.util.Optional;
+
 @SpringBootApplication
 public class SpringDataJpaExApplication {
 
@@ -28,7 +30,13 @@ public class SpringDataJpaExApplication {
 		s3.setName("Telusko");
 		s3.setMarks(100);
 
-		repo.save(s1);
+//		repo.save(s2);
+//		repo.save(s3);
+//		System.out.println(repo.findAll());
+//		System.out.println(repo.findById(103));
+	Optional<Student> s = repo.findById(104);
+		System.out.println(s.orElse(new Student()));
+
 
 
 	}

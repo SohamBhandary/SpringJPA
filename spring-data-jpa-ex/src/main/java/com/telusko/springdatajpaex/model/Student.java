@@ -10,8 +10,16 @@ import jakarta.persistence.Id;
 @Scope("prototype")
 @Entity
 public class Student {
+	@Override
+	public String toString() {
+		return "Student{" +
+				"rollNo=" + rollNo +
+				", name='" + name + '\'' +
+				", marks=" + marks +
+				'}';
+	}
 
-	//properties 
+	//properties
 	@Id
 	private int rollNo;
 	private String name;
